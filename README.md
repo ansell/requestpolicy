@@ -21,10 +21,13 @@ git clone https://github.com/RequestPolicyContinued/requestpolicy.git
 
 ## Building the XPI Firefox addon
 
-Before building you need to install [GNU Make](https://www.gnu.org/software/make/), [Zip](http://www.info-zip.org/Zip.html) and [`preprocess.py`](https://github.com/trentm/preprocess). On a debian-based system you could run:
+Before building you need to install [GNU Make](https://www.gnu.org/software/make/), [Zip](http://www.info-zip.org/Zip.html), [`preprocess.py`](https://github.com/trentm/preprocess), and [NPM](https://www.npmjs.com/get-npm). On a debian-based system you could run:
 
 ```bash
-sudo apt-get install make zip preprocess
+# Get a recent NodeJS/NPM required to build successfully
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+# Install build dependencies
+sudo apt-get install make zip preprocess nodejs gcc g++
 ```
 
 After preparation, run `make` from the repository's root directory.  The [XPI](https://developer.mozilla.org/en-US/docs/XPI) file will be created at `dist/requestpolicy-*.xpi` and can be used for easy installation of RP into your web browser (e.g. Firefox).
